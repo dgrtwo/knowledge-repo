@@ -115,10 +115,10 @@ def get_posts(feed_params):
     for post in posts:
         post.authors
 
-    post_stats = {post.path: {'all_views': post.view_count,
-                              'distinct_views': post.view_user_count,
-                              'total_likes': post.vote_count,
-                              'total_comments': post.comment_count} for post in posts}
+    post_stats = {post.path: {'all_views': 0,
+                              'distinct_views': 0,
+                              'total_likes': 0,
+                              'total_comments': 0} for post in posts}
 
     db_session.expunge_all()
 
